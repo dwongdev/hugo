@@ -532,6 +532,10 @@ func newHugoSites(
 		opts.GoVersion = bi.GoVersion
 	}
 
+	if opts.BuildDate == "" {
+		opts.BuildDate = hugo.GetBuildDate()
+	}
+
 	h.hugoInfo = page.NewHugoInfo(opts)
 
 	var prototype *deps.Deps

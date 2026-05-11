@@ -61,6 +61,11 @@ type BuildInfo struct {
 	GoVersion    string
 }
 
+// GetBuildDate returns the build date if set by -ldflags="-X github.com/gohugoio/hugo/common/hugo.buildDate="
+func GetBuildDate() string {
+	return buildDate
+}
+
 // GetBuildInfo returns the build info for the current binary.
 func GetBuildInfo() *BuildInfo {
 	bi := getBuildInfo()
