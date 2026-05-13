@@ -11,7 +11,7 @@
 * In tests, almost always write end-to-end integration tests using `hugolib.Test` or one of its siblings. Write unit tests only for isolated utilities.
 * In tests, use `qt` matchers (e.g. `b.Assert(err, qt.ErrorMatches, ...)`) instead of raw `if`/`t.Fatal` checks.
 * In tests, always use the latest Hugo specification, e.g. for layouts, it's `layouts/page.html` and not `layouts/_default/single.html`, `layouts/list.html` and not `layouts/_default/list.html`
-* Never name tests `TestIssue1234`; if this e.g. is about fixing an issue, use the issue ID as a suffix, as in `TestUpperCaseTitlesCreatesHavocIssue1234`. And note: No underscores in func names.
+* Never name tests `TestIssue1234`; always give the test function a descriptive name, e.g. `TestDisablePathToLower`, and add any issue reference as a Go doc function comment, e.g. `// See issue 1234.`.
 * If you're a security researcher, read @SECURITY.md carefully.
 * Brevity is good. This applies to code, comments and commit messages. Don't write a novel.
 * Use `./check.sh ./somepackage/...` when iterating.
